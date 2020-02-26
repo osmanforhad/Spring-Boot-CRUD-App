@@ -1,5 +1,7 @@
 package osmanforhad.net;
 
-public interface ProductRepositroy {
+import org.springframework.data.jpa.repository.JpaRepository;
 
-}
+public interface ProductRepositroy extends JpaRepository<Product, Long> {
+
+}//end of the class
