@@ -97,4 +97,21 @@ private ProductService service;
 		
 	}//end of the showEditProductForm method 
 	
+	/**
+	 * Writing method for 
+	 * delete data from Database
+	 * @PathVariable
+	 * annotation
+	 * 
+	 * @param id 
+	 * Long id
+	 * */
+	@RequestMapping("/delete/{id}") // mapping the url name
+	public String deleteProduct(@PathVariable(name = "id") Long id) {
+		service.delete(id);
+		
+		return "redirect:/"; //return redirect to index url
+		
+	}//end of the deleteProduct method
+	
 }//end of the class
