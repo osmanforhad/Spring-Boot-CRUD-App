@@ -13,11 +13,36 @@ public class AppController {
 	@Autowired
 private ProductService service;
 	
-	@RequestMapping("/")
+	/**
+	 * Writing method for going to
+	 * index URL
+	 * */
+	@RequestMapping("/") //mapping the url name
 	public String viewHomePage(Model model) {
 		List<Product> listProducts = service.listAll();
 		model.addAttribute("listProducts", listProducts);
-		return "index";
+		return "index";//return tragated page
 	}//end of the viewHomePage method
+	
+	/**
+	 * Writing method for going to
+	 * new URl
+	 * */
+	@RequestMapping("/new") //mapping the url name
+	public String showNewProductForm(Model model) {
+		/**
+		 * create new empty object
+		 *  name as product
+		 *  */
+		Product product = new Product();
+		/**
+		 * adding the object
+		 * product
+		 * with model attribute
+		 *  */
+		model.addAttribute("product", product);
+		return "new_product"; //retrun tragated page 
+		
+	}//end of the showNewProductForm method
 	
 }//end of the class
