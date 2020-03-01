@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AppController {
@@ -24,6 +26,7 @@ private ProductService service;
 		List<Product> listProducts = service.listAll();
 		model.addAttribute("listProducts", listProducts);
 		return "index";//return tragated page
+		
 	}//end of the viewHomePage method
 	
 	/**
@@ -61,6 +64,37 @@ private ProductService service;
 		service.save(product);
 		
 		return "redirect:/"; // return redirect to index url
+		
 	}//end of the saveProduct method
+	
+	
+	/**
+	 * Writing method to going to
+	 * edit existing data
+	 * 
+	 * @PathVariable
+	 * annotation
+	 * 
+	 * @param id
+	 * Long id
+	 * */
+	@RequestMapping("/edit/{id}") //mapping the url name
+	public ModelAndView showEditProductForm(@PathVariable(name = "id") Long id) {
+		/**
+		 * create new object
+		 * edit_product
+		 * name as mav
+		 * */
+		ModelAndView mav = new ModelAndView("edit_product");
+		/**
+		 * catch the details of
+		 * selective product by
+		 * id
+		 * */
+		Product product = service.get(id);
+		mav.addObject("product", product);
+		return mav; //return model and view object
+		
+	}//end of the showEditProductForm method 
 	
 }//end of the class
