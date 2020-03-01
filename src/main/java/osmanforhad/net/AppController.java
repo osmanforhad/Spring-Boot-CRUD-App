@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class AppController {
@@ -44,5 +46,21 @@ private ProductService service;
 		return "new_product"; //retrun tragated page 
 		
 	}//end of the showNewProductForm method
+	
+	/**
+	 * Writing method for 
+	 * save data into Database
+	 * 
+	 * @ModelAttribute 
+	 * annotation
+	 * 
+	 * object Product
+	 * */
+	@RequestMapping(value = "/save", method = RequestMethod.POST)//mapping the url and define method for upload data
+	public String saveProduct(@ModelAttribute("product") Product product) {
+		service.save(product);
+		
+		return "redirect:/"; // return redirect to index url
+	}//end of the saveProduct method
 	
 }//end of the class
