@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 01, 2020 at 07:54 AM
+-- Generation Time: Mar 01, 2020 at 10:20 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -41,10 +41,10 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `brand`, `madein`, `price`) VALUES
-(1, 'i Phone X', 'Apple', 'America', 120000),
+(1, 'i Phone X', 'Apple Inc.', 'America', 120000),
 (2, 'Samsung Galaxy 10', 'Samsung', 'Korea', 87000),
 (3, 'Xbox', 'Microsoft', 'America', 54000),
-(4, 'Xiaomi Note4', 'Xiaomi', 'China', 18000.9);
+(4, 'Xiaomi Note4', 'Xiaomi', 'China Republic', 18000);
 
 --
 -- Indexes for dumped tables
