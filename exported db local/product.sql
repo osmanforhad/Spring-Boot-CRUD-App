@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 01, 2020 at 10:48 AM
+-- Generation Time: Mar 01, 2020 at 11:07 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -43,7 +43,8 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`id`, `name`, `brand`, `madein`, `price`) VALUES
 (1, 'i Phone X', 'Apple Inc.', 'America', 120000),
 (2, 'Samsung Galaxy 10', 'Samsung', 'Korea', 87000),
-(3, 'Xbox', 'Microsoft', 'America', 54000);
+(3, 'Xbox', 'Microsoft', 'America', 54000),
+(5, 'Xiaomi Note4', 'Xiaomi', 'China Republic', 25000);
 
 --
 -- Indexes for dumped tables
@@ -63,7 +64,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
